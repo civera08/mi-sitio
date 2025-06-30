@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portafolio – Civera DS</title>
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+  <body class="pagina-interna">
+
+ <!-- Menú superior -->
+ <header class="menu-principal menu-fijo">
+  <a href="index.html" class="logo">
+    <img src="assets/img/logo.png" alt="Logo de César Rivera" />
+    <span>Civera DS</span>
+  </a>
+
+  <!-- Botón hamburguesa -->
+  <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <!-- Navegación -->
+  <nav class="menu-navegacion">
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="about.html">¿Quién Soy?</a></li>
+      <li><a href="portfolio.html">Zona Técnica</a></li>
+      <li><a href="contact.html">Hablemos</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- Cortina de fondo -->
+<div class="cortina-fondo"></div>
+
+    <!-- Contenido principal -->
+    <main class="contenido-principal layout-ancho-maximo">
+
+      <section class="quien-soy seccion-compacta">
+        <h2>¿Quién es César Rivera?</h2>
+
+        <p><strong>Soy ingeniero en Ciencia de Datos por la UVM</strong>, con más de 10 años de experiencia en transformación digital, automatización de procesos y visualización estratégica. A lo largo de mi carrera, he aprendido que la clave no está en las herramientas, sino en cómo conectamos datos con decisiones reales.</p>
+
+        <p><strong>Mis habilidades blandas incluyen:</strong></p>
+        <ul class="skills-lista">
+          <li>Comunicación efectiva y trabajo en equipo</li>
+          <li>Adaptabilidad y aprendizaje continuo</li>
+          <li>Resolución de problemas y pensamiento crítico</li>
+          <li>Organización y gestión del tiempo</li>
+        </ul>
+
+        <p>Durante tres años formé parte del proyecto <strong>Conectados</strong> en PepsiCo Latinoamérica, iniciativa enfocada en la digitalización de la cadena de valor. Colaboré en el desarrollo de soluciones escalables que mejoraron procesos operativos y fortalecieron la relación con clientes, combinando tecnología y estrategia.</p>
+      </section>
+
+      <section class="seccion-compacta">
+        <blockquote class="frase-impacto">
+          <p><em>“Automatizar no es solo hacer más rápido, es pensar mejor.”</em></p>
+        </blockquote>
+
+        <p><strong>Me motiva resolver lo complejo con soluciones simples.</strong> Entender el problema real es mi primer paso, y de ahí parto para crear flujos claros, sostenibles y con foco en el impacto. Trabajo con mentalidad de colaboración y mejora continua, me adapto rápido a nuevos entornos y mantengo la atención al detalle sin perder vista del panorama completo. Para mí, los datos no solo cuentan una historia... también son una brújula para construir algo mejor.</p>
+
+        <p>
+          <a href="assets/docs/CV_César_Rivera.pdf" target="_blank" style="
+            display: inline-block;
+            padding: 0.3rem 0.3rem;
+            background-color: #004d7a;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            transition: transform 0.2s ease, background-color 0.3s ease;">
+            📄 Descargar CV en Español
+          </a>
+
+          <a href="assets/docs/CV_EN_César_Rivera.pdf" target="_blank" style="
+            display: inline-block;
+            padding: 0.3rem 0.3rem;
+            background-color: #004d7a;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            font-family: 'Segoe UI', sans-serif;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            transition: transform 0.2s ease, background-color 0.3s ease;">
+            📄 Descargar CV en Inglés
+          </a>
+        </p>
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-fluido">
+      <p>Hecho con lógica, datos y café ☕ © 2025 César Rivera</p>
+    </footer>
+
+    <script>
+  const toggle = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('.menu-navegacion');
+  const overlay = document.querySelector('.cortina-fondo');
+
+  toggle.addEventListener('click', () => {
+    const activo = nav.classList.toggle('activo');
+    toggle.classList.toggle('activo');
+    overlay.classList.toggle('activo');
+    toggle.setAttribute('aria-expanded', activo);
+  });
+
+  overlay.addEventListener('click', () => {
+    nav.classList.remove('activo');
+    toggle.classList.remove('activo');
+    overlay.classList.remove('activo');
+    toggle.setAttribute('aria-expanded', false);
+  });
+</script>
+  </body>
+</html>

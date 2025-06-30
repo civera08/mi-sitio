@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portafolio – Civera DS</title>
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+  <body class="pagina-interna">
+
+  <!-- Menú superior -->
+ <header class="menu-principal menu-fijo">
+  <a href="index.html" class="logo">
+    <img src="assets/img/logo.png" alt="Logo de César Rivera" />
+    <span>Civera DS</span>
+  </a>
+
+  <!-- Botón hamburguesa -->
+  <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <!-- Navegación -->
+  <nav class="menu-navegacion">
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="about.html">¿Quién Soy?</a></li>
+      <li><a href="portfolio.html">Zona Técnica</a></li>
+      <li><a href="contact.html">Hablemos</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- Cortina de fondo -->
+<div class="cortina-fondo"></div>
+
+  <!-- Contenido principal -->
+<main class="contenido-principal layout-ancho-maximo">
+
+    <section class="quien-soy seccion-compacta">
+ <h2 style="margin-bottom: 1rem;">Análisis Exploratorio</h2>
+ <h3 style="margin-bottom: 1rem;">- ¿Por qué renuncian los empleados? Un análisis de la rotación de personal en una empresa tecnológica</h3>
+
+<p><strong>🎯 Objetivo:</strong> Detectar características y factores comunes que están relacionados con los empleados que han dejado la empresa y brindar hallazgos accionables para el área de Recursos Humanos que pueden ayudar a diseñar estrategias de retención de talento más efectivas.</p>
+<p><strong>🛠️ Herramientas utilizadas:</strong></p>
+<ul class="skills-lista">
+  <li>Análisis univariado y bivariado con <strong>Python (pandas, seaborn, matplotlib)</strong></li>  
+  <li>Visualización de distribuciones, boxplots y tasas de renuncia</li>  
+  <li>Generación de insights enfocados al negocio</li>
+</ul>
+<p><strong>📎 Archivos del proyecto:</strong><a href="https://github.com/civera08/hr-attrition-analysis" target="_blank">Ver en GitHub</a></p>
+
+ <div class="contenedor-unificado">
+        <img src="assets/img/mat.png" alt="Matriz de correlación" style="width: 100%; height: auto; border-radius: 8px;" />
+        <div class="leyenda"><strong>Matriz de correlación entre variables</strong></div>
+      </div>
+
+   <div class="contenedor-unificado">
+        <img src="assets/img/dis1.png" alt="Diagrama de caja" style="width: 100%; height: auto; border-radius: 8px;" />
+        <div class="leyenda"><strong>Diferencias Clave entre Empleados con y sin Rotación</strong></div>
+      </div>
+
+       <div class="contenedor-unificado">
+        <img src="assets/img/dis2.png" alt="Barras segmentadas" style="width: 100%; height: auto; border-radius: 8px;" />
+        <div class="leyenda"><strong>Mapeo de la Rotación: Qué Perfil Tiende a Irse</strong></div>
+      </div>
+
+<p><strong>🧾 Conclusiones del Análisis:</strong> Este análisis exploratorio nos permitió identificar tendencias relevantes para la gestión del talento:</p> 
+<ul class="skills-lista">
+<li>Edad y experiencia: La rotación es más alta entre los empleados jóvenes y con menor antigüedad.</li>
+<li>Sobrecarga y horarios: Aquellos que hacen horas extra están significativamente más expuestos a renunciar.</li>
+<li>Rol y área: Ciertos puestos operativos, como técnicos de laboratorio y vendedores, presentan mayor rotación.</li>
+<li>Factores personales: Los empleados solteros y quienes viven lejos tienen mayores tasas de salida.</li>
+<li>Estos hallazgos pueden ser utilizados para enfocar estrategias de retención más efectivas, como mejorar la flexibilidad laboral, optimizar procesos de promoción interna y brindar seguimiento más cercano a perfiles de riesgo.</li>
+</ul>    
+</section>
+  
+    <section class="seccion-compacta" style="text-align:center; margin-top: 0.5rem; margin-bottom: 3rem;">
+      <h3>🔁 ¿Quieres explorar más proyectos?</h3>
+      <p>Este es solo uno de los flujos que he desarrollado como parte de mi enfoque en automatización inteligente y diseño técnico escalable.</p>
+      <button onclick="scrollToPortfolio()" class="boton-principal">
+        ⬅️ Regresar a la Zona Técnica
+      </button>
+    </section>
+  </main>
+
+  <script>
+    function scrollToPortfolio() {
+      window.location.href = 'portfolio.html';
+    }
+  </script>
+
+    <!-- Footer -->
+    <footer class="footer-fluido">
+      <p>Hecho con lógica, datos y café ☕ © 2025 César Rivera</p>
+    </footer>
+
+    <script>
+  const toggle = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('.menu-navegacion');
+  const overlay = document.querySelector('.cortina-fondo');
+
+  toggle.addEventListener('click', () => {
+    const activo = nav.classList.toggle('activo');
+    toggle.classList.toggle('activo');
+    overlay.classList.toggle('activo');
+    toggle.setAttribute('aria-expanded', activo);
+  });
+
+  overlay.addEventListener('click', () => {
+    nav.classList.remove('activo');
+    toggle.classList.remove('activo');
+    overlay.classList.remove('activo');
+    toggle.setAttribute('aria-expanded', false);
+  });
+</script>
+  </body>
+</html>

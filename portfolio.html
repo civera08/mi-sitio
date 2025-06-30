@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portafolio – Civera DS</title>
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+  <body class="pagina-interna">
+
+  <!-- Menú superior -->
+ <header class="menu-principal menu-fijo">
+  <a href="index.html" class="logo">
+    <img src="assets/img/logo.png" alt="Logo de César Rivera" />
+    <span>Civera DS</span>
+  </a>
+
+  <!-- Botón hamburguesa -->
+  <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <!-- Navegación -->
+  <nav class="menu-navegacion">
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="about.html">¿Quién Soy?</a></li>
+      <li><a href="portfolio.html">Zona Técnica</a></li>
+      <li><a href="contact.html">Hablemos</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- Cortina de fondo -->
+<div class="cortina-fondo"></div>
+
+  <!-- Contenido principal -->
+<main class="contenido-principal layout-ancho-maximo">
+
+    <section class="quien-soy seccion-compacta">
+ <h2>Mis Competencias</h2>
+
+<p>
+  Cuento con un sólido dominio en el manejo y procesamiento de datos, utilizando tanto lenguajes tradicionales como <strong>Python</strong> y <strong>SQL</strong>, así como herramientas especializadas para <strong>análisis avanzado</strong> y <strong>automatización de procesos</strong>. Mi experiencia abarca desde la extracción y limpieza rigurosa de datos, hasta el desarrollo de modelos predictivos y la creación de dashboards interactivos que transforman datos en decisiones estratégicas claras y efectivas.
+</p>
+
+<section class="tarjeta-perfil seccion-compacta">
+      <h2>🛠️ Habilidades Técnicas</h2>
+      <ul class="skills-lista">
+        <li><strong>Lenguajes:</strong> Python, SQL, VBA</li>
+        <li><strong>Análisis de Datos:</strong> Pandas, Polars, NumPy, Scikit-learn</li>
+        <li><strong>Visualización:</strong> Power BI, Tableau, Matplotlib, Seaborn</li>
+        <li><strong>Automatización:</strong> Power Automate, Macros Excel</li>
+        <li><strong>Bases de Datos:</strong> MySQL, PostgreSQL</li>
+        <li><strong>Control de versiones:</strong> Git, GitHub</li>
+        <li><strong>Entorno:</strong> Visual Studio Code</li>
+      </ul>
+      </section>
+</section>
+
+      <p><strong>Descubre proyectos destacados donde he aplicado mis habilidades en ciencia de datos.</strong></p>
+<div class="marco-competencias">
+  <div class="hover-card">
+    <a href="aut.html">
+      <img src="assets/img/aut.jpg" alt="Automatización">
+    </a>
+    <span class="hover-label">AUTOMATIZACIÓN</span>
+  </div>
+  <div class="hover-card">
+    <a href="vis.html">
+      <img src="assets/img/vis.jpg" alt="Visualización">
+    </a>
+    <span class="hover-label">VISUALIZACIÓN</span>
+  </div>
+  <div class="hover-card">
+    <a href="ana.html">
+      <img src="assets/img/ana.jpg" alt="Análisis">
+    </a>
+    <span class="hover-label">ANÁLISIS EXPLORATORIO</span>
+  </div>
+</div>
+
+    <!-- Footer -->
+  <footer class="footer-fluido">
+    <p>Hecho con lógica, datos y café ☕ © 2025 César Rivera</p>
+  </footer>
+
+<script>
+  const toggle = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('.menu-navegacion');
+  const overlay = document.querySelector('.cortina-fondo');
+
+  toggle.addEventListener('click', () => {
+    const activo = nav.classList.toggle('activo');
+    toggle.classList.toggle('activo');
+    overlay.classList.toggle('activo');
+    toggle.setAttribute('aria-expanded', activo);
+  });
+
+  overlay.addEventListener('click', () => {
+    nav.classList.remove('activo');
+    toggle.classList.remove('activo');
+    overlay.classList.remove('activo');
+    toggle.setAttribute('aria-expanded', false);
+  });
+</script>
+</body>
+</html>

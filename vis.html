@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portafolio – Civera DS</title>
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+  <body class="pagina-interna">
+
+  <!-- Menú superior -->
+ <header class="menu-principal menu-fijo">
+  <a href="index.html" class="logo">
+    <img src="assets/img/logo.png" alt="Logo de César Rivera" />
+    <span>Civera DS</span>
+  </a>
+
+  <!-- Botón hamburguesa -->
+  <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <!-- Navegación -->
+  <nav class="menu-navegacion">
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="about.html">¿Quién Soy?</a></li>
+      <li><a href="portfolio.html">Zona Técnica</a></li>
+      <li><a href="contact.html">Hablemos</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- Cortina de fondo -->
+<div class="cortina-fondo"></div>
+
+  <!-- Contenido principal -->
+  <main class="contenido-principal layout-ancho-maximo">
+
+    <section class="quien-soy seccion-compacta">
+      <h2>Visualización - Creación de Dashboards</h2>
+
+      <h3>📊 Análisis Regional de Datos con Power BI</h3>
+      <p>Visualización interactiva basada en datos procesados desde Excel.</p>
+      <p><strong>🎯 Objetivo:</strong> Consolidar datos regionales desde múltiples archivos de Excel y presentarlos en un tablero visual que facilite la exploración por parte de usuarios no técnicos.</p>
+      <p><strong>🛠️ Herramientas utilizadas:</strong></p>
+      <ul class="skills-lista">
+        <li>Excel: limpieza y estructura base de datos</li>
+        <li>Power BI: modelo de datos, relaciones, segmentación interactiva y diseño visual</li>
+      </ul>
+      <p><strong>📎 Archivos del dashboard:</strong> <a href="https://github.com/civera08/visualizaciones-python/tree/main/powerbi/por_region" target="_blank">Ver en GitHub</a></p>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe title="Por_Region"
+          src="https://app.powerbi.com/view?r=eyJrIjoiZGYxOTBhOGQtNzBjZi00MTAwLWEwODMtYTUyZTAwOTNiNTdiIiwidCI6IjRiNGU3N2JkLTVmZmMtNDg4OS1iMDBhLTA3M2E1ODg0NTU0MiJ9"
+          style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"
+          allowfullscreen>
+  </iframe>
+</div>
+
+      <h3>🎮 Reporte de Ventas por Consolas con Power BI</h3>
+      <p>Visualización interactiva del desempeño de ventas segmentadas por tipo de consola, región y línea de productos.</p>
+      <p><strong>🎯 Objetivo:</strong> Analizar y presentar de manera visual y dinámica las tendencias de ventas de consolas y accesorios a lo largo del tiempo, permitiendo identificar las plataformas más vendidas, comparar rendimiento mensual, y detectar oportunidades de crecimiento en distintas regiones mediante insights.</p>
+      <p><strong>🛠️ Herramientas utilizadas:</strong></p>
+      <ul class="skills-lista">
+        <li>Excel: depuración, limpieza y estructura base de datos</li>
+        <li>Power BI: modelo de datos, relaciones, segmentación interactiva y diseño visual, medidas DAX para KPI's</li>
+      </ul>
+      <p><strong>⭐ Aspectos destacados:</strong></p>
+      <ul class="skills-lista">
+        <li>Filtros dinámicos por consola (PlayStation, Xbox, Nintendo, etc.)</li>
+        <li>Gráficos de líneas y columnas que muestran tendencias mensuales</li>
+        <li>KPIs que resumen ventas totales, rankings y comparaciones temporales</li>
+        <li>Navegación intuitiva para usuarios no técnicos</li>
+      </ul>
+      <p><strong>📎 Archivos del dashboard:</strong> <a href="https://github.com/civera08/visualizaciones-python/tree/main/powerbi/gameshop" target="_blank">Ver en GitHub</a></p>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe title="GameShop"
+          src="https://app.powerbi.com/view?r=eyJrIjoiZmU4MjJmMmUtOTUwZS00YWNjLWExMjgtNGVmOTY5NDk4YzBkIiwidCI6IjRiNGU3N2JkLTVmZmMtNDg4OS1iMDBhLTA3M2E1ODg0NTU0MiJ9&pageName=c87bcaf124b274b1e8e7"
+          style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"
+          allowfullscreen>
+  </iframe>
+</div>
+    </section>
+
+    <section class="seccion-compacta" style="text-align:center; margin-top: 0.5rem; margin-bottom: 3rem;">
+      <h3>🔁 ¿Quieres explorar más proyectos?</h3>
+      <p>Estos son solo algunos de los dashboards que he desarrollado como parte de mi enfoque en visualización de datos.</p>
+      <button onclick="scrollToPortfolio()" class="boton-principal">
+        ⬅️ Regresar a la Zona Técnica
+      </button>
+    </section>
+  </main>
+
+  <script>
+    function scrollToPortfolio() {
+      window.location.href = 'portfolio.html';
+    }
+  </script>
+
+    <!-- Footer -->
+    <footer class="footer-fluido">
+      <p>Hecho con lógica, datos y café ☕ © 2025 César Rivera</p>
+    </footer>
+
+    <script>
+  const toggle = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('.menu-navegacion');
+  const overlay = document.querySelector('.cortina-fondo');
+
+  toggle.addEventListener('click', () => {
+    const activo = nav.classList.toggle('activo');
+    toggle.classList.toggle('activo');
+    overlay.classList.toggle('activo');
+    toggle.setAttribute('aria-expanded', activo);
+  });
+
+  overlay.addEventListener('click', () => {
+    nav.classList.remove('activo');
+    toggle.classList.remove('activo');
+    overlay.classList.remove('activo');
+    toggle.setAttribute('aria-expanded', false);
+  });
+</script>
+  </body>
+</html>

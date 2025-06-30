@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portafolio – Civera DS</title>
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+  <body class="pagina-interna">
+
+   <!-- Menú superior -->
+ <header class="menu-principal menu-fijo">
+  <a href="index.html" class="logo">
+    <img src="assets/img/logo.png" alt="Logo de César Rivera" />
+    <span>Civera DS</span>
+  </a>
+
+  <!-- Botón hamburguesa -->
+  <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <!-- Navegación -->
+  <nav class="menu-navegacion">
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="about.html">¿Quién Soy?</a></li>
+      <li><a href="portfolio.html">Zona Técnica</a></li>
+      <li><a href="contact.html">Hablemos</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- Cortina de fondo -->
+<div class="cortina-fondo"></div>
+
+    <!-- Contenido principal -->
+    <main class="contenido-principal layout-ancho-maximo">
+      <section class="quien-soy seccion-compacta">
+        <h2 style="margin-bottom: 1rem;">Automatización de Procesos</h2>
+        <h3 style="margin-bottom: 1rem;">Seguimiento a Indicadores de Desempeño (KPIs) Administrativos</h3>
+
+        <p><strong>🎯 Objetivo:</strong> Desarrollar un sistema automatizado integral utilizando tecnologías como Python, SQL y Power Automate, que permita gestionar y monitorear los indicadores clave de desempeño (KPIs) del área administrativa.</p>
+
+        <p><strong>💼 Caso administrativo simulado:</strong> Una oficina de Recursos Humanos necesita monitorear semanalmente métricas como asistencia, cumplimiento de tareas y tiempos de respuesta. Actualmente esto se hace en Excel, de forma manual.</p>
+
+        <p><strong>🛠 Descripción Técnica del Proyecto:</strong></p>
+        <ul class="skills-lista">
+          <li><strong>Extracción de datos en tiempo real:</strong> Conexión automatizada a base de datos SQL.</li>
+          <li><strong>Procesamiento de KPIs con Python:</strong>
+            <ul>
+              <li>1. Porcentaje de asistencia por empleado</li>
+              <li>2. Nivel de cumplimiento de tareas</li>
+              <li>3. Tiempo promedio de respuesta a solicitudes internas</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p>Estas métricas se generan a partir de consultas SQL y transformaciones con pandas.</p>
+
+        <p><strong>Generación de reportes profesionales:</strong> Consolidación de resultados en Excel con formato legible.</p>
+        <p><strong>Distribución automática:</strong> Power Automate orquesta el envío de los reportes por correo.</p>
+
+        <p><strong>🔄 Flujo de Automatización:</strong></p>
+        <ul class="skills-lista">
+          <li>Consulta periódica a la base SQL</li>
+          <li>Procesamiento y unificación de KPIs con Python</li>
+          <li>Generación de reporte en Excel</li>
+          <li>Envío automatizado del archivo</li>
+        </ul>
+
+        <p><strong>🚀 Impacto Esperado:</strong></p>
+        <ul class="skills-lista">
+          <li>Reducción de tiempo en elaboración de reportes</li>
+          <li>Eliminación de errores humanos</li>
+          <li>Acceso ágil y confiable a datos clave</li>
+        </ul>
+
+        <p><strong>📎 Archivos del proyecto:</strong> <a href="https://github.com/civera08/automatizacion-facturacion" target="_blank">Ver en GitHub</a></p>
+      </section>
+
+      <!-- Imágenes + código -->
+      <div class="contenedor-unificado">
+        <img src="assets/img/seg.png" alt="Flujo" style="width: 100%; height: auto; border-radius: 8px;" />
+        <div class="leyenda"><strong>Diagrama de flujo del proceso de automatización</strong></div>
+      </div>
+
+      <div class="contenedor-unificado">
+        <img src="assets/img/db.png" alt="Base de datos" style="width: 100%; height: auto; border-radius: 8px;" />
+        <div class="leyenda"><strong>Creación de la base de datos SQL para el sistema</strong></div>
+      </div>
+
+      <div class="contenedor-unificado">
+        <img src="assets/img/de.png" alt="Modelo estrella" style="width: 100%; height: auto; border-radius: 8px;" />
+        <div class="leyenda"><strong>Modelo estrella que consolida datos para análisis</strong></div>
+      </div>
+
+      <div class="contenedor-unificado">
+        <div class="codigo">
+<pre><code>def insertar_asistencias(cursor):
+    start_date = datetime(2024, 3, 1)
+    tipos = ['presencial', 'remoto', 'ausencia']
+    asistencias = []
+    for emp_id in range(1, 41):
+        for i in range(90):
+            fecha = start_date + timedelta(days=i)
+            tipo = random.choices(tipos, weights=[0.75, 0.2, 0.05])[0]
+            if tipo == 'ausencia':
+                entrada = salida = None
+            else:
+                entrada = (datetime(2024,1,1,8,0) + timedelta(
+                    minutes=random.randint(0,30))).time()
+                salida = (datetime(2024,1,1,17,0) + timedelta(
+                    minutes=random.randint(0,30))).time()
+            asistencias.append((emp_id, fecha.date(), entrada, salida, tipo))
+    cursor.executemany("""INSERT INTO asistencias (...) VALUES (?, ?, ?, ?, ?)""", 
+          asistencias)
+</code></pre>
+        </div>
+        <div class="leyenda"><strong>Simulación de registros de asistencia con Python y SQL</strong></div>
+      </div>
+
+      <div class="contenedor-unificado">
+        <div class="codigo">
+<pre><code>def unificar_kpis():
+    conn = get_connection()
+    cursor = conn.cursor()
+    df_asistencia = calcular_asistencia(conn)
+    df_tareas = calcular_tareas(conn)
+    df_respuestas = calcular_respuestas(conn)
+    df_final = df_asistencia.merge(df_tareas, on='id').merge(df_respuestas, on='id')
+    df_final = df_final.round(2)
+    conn.close()
+    return df_final
+</code></pre>
+        </div>
+        <div class="leyenda"><strong>Función que unifica los KPIs en un DataFrame consolidado</strong></div>
+      </div>
+
+      <div class="contenedor-unificado">
+        <img src="assets/img/flu.png" alt="Power Automate" style="width: 100%; height: auto; border-radius: 8px;" />
+        <div class="leyenda"><strong>Diseño del flujo de automatización con Power Automate</strong></div>
+      </div>
+
+      <div class="contenedor-unificado">
+        <img src="assets/img/prog.png" alt="Programación" style="width: 100%; height: auto; border-radius: 8px;" />
+        <div class="leyenda"><strong>Programación de ejecución periódica del flujo</strong></div>
+      </div>
+
+      <div class="contenedor-unificado">
+        <img src="assets/img/mai.png" alt="Correo" style="width: 100%; height: auto; border-radius: 8px;" />
+        <div class="leyenda"><strong>Correo electrónico automatizado con archivo adjunto</strong></div>
+      </div>
+
+      <section class="seccion-compacta" style="text-align:center; margin-top: 0.5rem; margin-bottom: 3rem;">
+        <h3>🔁 ¿Quieres explorar más proyectos?</h3>
+        <p>Este es solo uno de los flujos que he desarrollado como parte de mi enfoque en automatización inteligente y diseño técnico escalable.</p>
+        <button onclick="scrollToPortfolio()" class="boton-principal">
+          ⬅️ Regresar a la Zona Técnica
+        </button>
+      </section>
+    </main>
+
+    <script>
+      function scrollToPortfolio() {
+        window.location.href = 'portfolio.html';
+      }
+    </script>
+
+    <!-- Footer -->
+    <footer class="footer-fluido">
+      <p>Hecho con lógica, datos y café ☕ © 2025 César Rivera</p>
+    </footer>
+
+    <script>
+  const toggle = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('.menu-navegacion');
+  const overlay = document.querySelector('.cortina-fondo');
+
+  toggle.addEventListener('click', () => {
+    const activo = nav.classList.toggle('activo');
+    toggle.classList.toggle('activo');
+    overlay.classList.toggle('activo');
+    toggle.setAttribute('aria-expanded', activo);
+  });
+
+  overlay.addEventListener('click', () => {
+    nav.classList.remove('activo');
+    toggle.classList.remove('activo');
+    overlay.classList.remove('activo');
+    toggle.setAttribute('aria-expanded', false);
+  });
+</script>
+  </body>
+</html>

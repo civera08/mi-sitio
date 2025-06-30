@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portafolio – Civera DS</title>
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+  <body class="pagina-interna">
+
+ <!-- Menú superior -->
+ <header class="menu-principal menu-fijo">
+  <a href="index.html" class="logo">
+    <img src="assets/img/logo.png" alt="Logo de César Rivera" />
+    <span>Civera DS</span>
+  </a>
+
+  <!-- Botón hamburguesa -->
+  <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <!-- Navegación -->
+  <nav class="menu-navegacion">
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="about.html">¿Quién Soy?</a></li>
+      <li><a href="portfolio.html">Zona Técnica</a></li>
+      <li><a href="contact.html">Hablemos</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- Cortina de fondo -->
+<div class="cortina-fondo"></div>
+
+  <!-- Contenido principal -->
+<main class="contenido-principal layout-ancho-maximo">
+
+    <section class="quien-soy seccion-compacta">
+ <h2>Proyecto Integral</h2>
+
+    <section class="seccion-compacta" style="text-align:center; margin-top: 0.5rem; margin-bottom: 3rem;">
+      <h3>🔁 ¿Quieres explorar más proyectos?</h3>
+      <p>Este es solo uno de los flujos que he desarrollado como parte de mi enfoque en automatización inteligente y diseño técnico escalable.</p>
+      <button onclick="scrollToPortfolio()" class="boton-principal">
+        ⬅️ Regresar a la Zona Técnica
+      </button>
+    </section>
+  </main>
+
+  <script>
+    function scrollToPortfolio() {
+      window.location.href = 'portfolio.html';
+    }
+  </script>
+
+    <!-- Footer -->
+    <footer class="footer-fluido">
+      <p>Hecho con lógica, datos y café ☕ © 2025 César Rivera</p>
+    </footer>
+
+    <script>
+  const toggle = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('.menu-navegacion');
+  const overlay = document.querySelector('.cortina-fondo');
+
+  toggle.addEventListener('click', () => {
+    const activo = nav.classList.toggle('activo');
+    toggle.classList.toggle('activo');
+    overlay.classList.toggle('activo');
+    toggle.setAttribute('aria-expanded', activo);
+  });
+
+  overlay.addEventListener('click', () => {
+    nav.classList.remove('activo');
+    toggle.classList.remove('activo');
+    overlay.classList.remove('activo');
+    toggle.setAttribute('aria-expanded', false);
+  });
+</script>
+  </body>
+</html>

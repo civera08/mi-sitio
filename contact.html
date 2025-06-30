@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portafolio – Civera DS</title>
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+  <body class="pagina-interna">
+
+   <!-- Menú superior -->
+ <header class="menu-principal menu-fijo">
+  <a href="index.html" class="logo">
+    <img src="assets/img/logo.png" alt="Logo de César Rivera" />
+    <span>Civera DS</span>
+  </a>
+
+  <!-- Botón hamburguesa -->
+  <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <!-- Navegación -->
+  <nav class="menu-navegacion">
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="about.html">¿Quién Soy?</a></li>
+      <li><a href="portfolio.html">Zona Técnica</a></li>
+      <li><a href="contact.html">Hablemos</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- Cortina de fondo -->
+<div class="cortina-fondo"></div>
+
+  <!-- Contenido principal -->
+<main class="contenido-principal layout-ancho-maximo">
+
+  <section class="quien-soy seccion-compacta">
+  <h2>Hablemos de ideas, retos y oportunidades</h2>
+
+  <p>¿Tienes un proyecto en mente, un desafío técnico o simplemente ganas de colaborar? Ya sea en modalidad freelance, una vacante o una iniciativa conjunta, estaré encantado de conocerte.</p>
+    
+  <p>💡 Estoy aquí para ayudarte a transformar procesos manuales, análisis repetitivos y flujos ineficientes en soluciones digitales claras, automatizadas y escalables</p>
+
+  <p>🚀 Desde automatizar tareas hasta crear dashboards interactivos o analizar datos estratégicos, estoy listo para aportar valor real a tu equipo, proyecto o idea.</p>
+
+  <p>👉 Escríbeme por cualquiera de los medios aquí abajo. Estoy abierto a conversar, proponer y construir juntos.</p>
+</div>
+
+  <div class="redes-contacto" style="margin-top: 2rem; display: flex; gap: 1.5rem; flex-wrap: wrap;">
+    <a href="mailto:civera-ds@outlook.com" title="Mándame un correo" target="_blank">
+      <img src="assets/icons/mail.png" alt="Ícono de correo" height="40" />Correo
+    </a>
+    <a href="https://wa.me/525636314722?text=¡Hola%20César!%20Acabo%20de%20ver%20tu%20sitio%20web%20y%20me%20encantó%20tu%20trabajo.%20¿Podemos%20hablar%20un%20momento%3F" title="Hablamos por WhatsApp" target="_blank">
+      <img src="assets/icons/whatsapp.png" alt="Ícono de WhatsApp" height="40" />Whatsapp
+    </a>
+    <a href="https://github.com/civera08" title="Repositorios en GitHub" target="_blank">
+      <img src="assets/icons/github.png" alt="Ícono de GitHub" height="40" />GitHub
+    </a>
+    <a href="https://www.linkedin.com/in/civera/" title="Mi perfil en LinkedIn" target="_blank">
+      <img src="assets/icons/linkedin.png" alt="Ícono de LinkedIn" height="40" />LinkedIn
+    </a>
+  </div>
+</section>
+</main>
+
+  <!-- Footer -->
+  <footer class="footer-fluido">
+    <p>Hecho con lógica, datos y café ☕ © 2025 César Rivera</p>
+  </footer>
+
+ <script>
+  const toggle = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('.menu-navegacion');
+  const overlay = document.querySelector('.cortina-fondo');
+
+  toggle.addEventListener('click', () => {
+    const activo = nav.classList.toggle('activo');
+    toggle.classList.toggle('activo');
+    overlay.classList.toggle('activo');
+    toggle.setAttribute('aria-expanded', activo);
+  });
+
+  overlay.addEventListener('click', () => {
+    nav.classList.remove('activo');
+    toggle.classList.remove('activo');
+    overlay.classList.remove('activo');
+    toggle.setAttribute('aria-expanded', false);
+  });
+</script>
+</body>
+</html>
